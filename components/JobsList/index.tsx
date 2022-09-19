@@ -1,4 +1,4 @@
-import { faExternalLink, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
@@ -35,12 +35,7 @@ export const JobList = ({ jobs }: Props) => {
               {job.companyName}
               <BlackBtn>
                 Opens new tab
-                <FontAwesomeIcon
-                  style={{
-                    marginLeft: "5px",
-                  }}
-                  icon={faExternalLink}
-                />
+                <FontAwesomeIcon icon={faExternalLink} />
               </BlackBtn>
             </CompanyName>
 

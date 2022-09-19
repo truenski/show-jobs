@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail \"nodemon server.js\" \"next dev\"",
+    "dev": "concurrently --kill-others-on-fail \"next dev\" \"nodemon server.js\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

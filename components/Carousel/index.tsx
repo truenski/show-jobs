@@ -17,10 +17,10 @@ const Carousel = ({ children, jobs }: Props) => {
   const [scrollY, setScrollY] = useState(0);
   const [disablePrev, setDisablePrev] = useState(false);
 
-  /*Carousel effect will be reproduced decreasing or increasing margin-top, basing in how much height all the Jobslist component have */
+  /*Carousel effect will be reproduced decreasing or increasing margin-top */
   const handleUpArrow = () => {
-    /*y its a value approximately equal to 2 cards  */
-    let y = scrollY + 2 * 210;
+    /*y its a value equal to 2 CardContainer height */
+    let y = scrollY + 2 * 240;
     if (y > 0) {
       y = 0;
     }
@@ -28,29 +28,30 @@ const Carousel = ({ children, jobs }: Props) => {
   };
 
   const handleDownArrow = () => {
-    let y = scrollY - 2 * 210;
+    let y = scrollY - 2 * 240;
 
-    /*10 items, with 211 height */
-    let listH = jobs.length * 210;
+    /*10 items, with 220height + 20margin */
+    let listH = jobs.length * 240;
 
-    /*handle the final scroll. window.innerHeight -> 83vh -> CarouselArea Height  */
-    if (window.innerHeight * 0.83 - listH > y) {
-      /*Jobs card height may vary because of the responsivity, so as i don't have a fixed value for the cards, 
-      i'll deal with the final scroll in the carousel adding a space equivalent to a card, so it will prevent not displaying the last card 
+    /*To handle the last scroll.
+      window.innerHeight -> 83vh -> CarouselArea Height
+      -20 -> add margin-top so the content don't get sticked to the button
     */
-      y = window.innerHeight * 0.83 - listH - 50;
+    if (window.innerHeight * 0.83 - listH > y) {
+      y = window.innerHeight * 0.83 - listH - 20;
       setDisablePrev(true);
     }
 
     setScrollY(y);
   };
 
-  const style = { marginTop: scrollY, transition: "all ease 0.5s" };
-
+  /*restart scroll after clicking in a button */
   useEffect(() => {
     setScrollY(0);
   }, [jobs]);
 
+  /*enable Prev scroll button when scroll changes.
+   */
   useEffect(() => {
     setDisablePrev(false);
   }, [scrollY]);
@@ -60,11 +61,8 @@ const Carousel = ({ children, jobs }: Props) => {
       <Next onClick={handleUpArrow} scrollY={scrollY}>
         <FontAwesomeIcon icon={faArrowUp} />
       </Next>
-      <CarouselArea>
-        <div style={style}> {children}</div>
-        <Up onClick={() => setScrollY(0)}>
-          <FontAwesomeIcon icon={faUpLong} />
-        </Up>
+      <CarouselArea scrollY={scrollY}>
+        <div> {children}</div>
       </CarouselArea>
       <Prev disablePrev={disablePrev} onClick={handleDownArrow}>
         <FontAwesomeIcon icon={faArrowDown} />

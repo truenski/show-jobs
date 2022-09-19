@@ -2,12 +2,14 @@ import { faArrowUpAZ } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Job } from "../../typings";
-import { Button } from "./styled";
+import { ButtonSideMenu } from "./styled";
 
-type Props = { setJobs: React.Dispatch<React.SetStateAction<Job[]>> };
+type Props = {
+  setJobs: React.Dispatch<React.SetStateAction<Job[]>>;
+};
 
 const SortByCompanyName = ({ setJobs }: Props) => {
-  /* function that will compare the companyName strings in the jobs array, and sort A-Z   */
+  /* I'm comparing the companyName strings, sorting A-Z. after the sort, is returned a new array which i set as the new jobs state   */
   const sortByCompanyName = () => {
     setJobs((jobs) => [
       ...jobs.sort((a, b) =>
@@ -21,13 +23,13 @@ const SortByCompanyName = ({ setJobs }: Props) => {
   };
 
   return (
-    <Button
+    <ButtonSideMenu
       onClick={() => {
         sortByCompanyName();
       }}
     >
       Sort By Company Name <FontAwesomeIcon icon={faArrowUpAZ} />
-    </Button>
+    </ButtonSideMenu>
   );
 };
 

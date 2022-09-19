@@ -13,13 +13,18 @@ align-items: center;
 }
 `;
 
-export const CarouselArea = styled.div`
+export const CarouselArea = styled.div<{ scrollY: number }>`
   width: 100%;
   height: 83vh;
   overflow: hidden;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
+
+  & > div {
+    margin-top: ${(props) => props.scrollY}px;
+    transition: all ease 0.5s;
+  }
 `;
 export const Button = styled.button`
   height: 30px;
@@ -45,12 +50,4 @@ export const Prev = styled(Button)<{ disablePrev: boolean }>`
   svg path {
     color: ${(props) => (props.disablePrev == true ? "dimgrey" : "white")};
   }
-`;
-export const Up = styled(Button)`
-  width: 40px;
-  height: 40px;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 2em;
 `;

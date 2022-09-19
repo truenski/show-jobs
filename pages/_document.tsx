@@ -1,6 +1,7 @@
 import Document, { DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
+/*This document will inject server-side rendered styles to the head so it can render the page and its styles correctly. */
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();

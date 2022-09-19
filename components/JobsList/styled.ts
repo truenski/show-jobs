@@ -23,8 +23,8 @@ export const CardContainer = styled.a`
   gap: 20px;
   margin: 20px;
   outline: 1px #80808070 solid;
-  padding: 20px;
-  height: auto;
+  padding: 18px;
+  height: 220px;
   width: 488px;
   transition: all 0.2s ease-in-out;
 
@@ -70,6 +70,8 @@ export const BlackBtn = styled.button`
   color: lightgray;
 
   svg {
+    margin-left: 5px;
+
     path {
       color: #3174ee;
     }
@@ -89,22 +91,11 @@ export const RightSideContainer = styled.div`
   flex-direction: column;
   gap: 8px;
   white-space: break-spaces;
-
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
 `;
 
 export const ShortDesc = styled.span`
 overflow: hidden;
-margin: 5px 0;
 color:lightgray;
-
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   
 
 }`;

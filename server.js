@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-/*To prevent CORS error, because i'm using different addresses for server and client */
+/*To prevent CORS error, due to using different addresses for server and client */
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();
@@ -32,7 +32,8 @@ app.get("/api/jobs", (req, res) => {
     .post(url, article)
 
     .then((response) => {
-      /*Get only properties that i will use, with destructuring. */
+      /*Getting only the properties i will use, with destructuring. */
+      /*jobList == arr with jobTitle, companyName, jobDescription, postedDate, companyLogo, OBJurl, */
       const jobList = response.data.jobs.map(
         ({
           jobTitle,

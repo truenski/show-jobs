@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const FilterButton = styled.button`
   margin: 15px;
   padding: 15px;
   border: none;
@@ -48,21 +48,73 @@ export const Button = styled.button`
     }
   }
 
-  @media (max-width: 720px) {
-    border: none;
-    margin: 5px;
-    padding: 15px 5px;
-    background: initial;
+  }
+`;
 
-    svg {
-      background: initial;
+export const StyledMenu = styled.nav<{ open: boolean }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  height: ${({ open }) => (open ? "100px" : "0px")};
+  margin-top: ${({ open }) => (open ? "100px" : "0px")};
+  margin-bottom: ${({ open }) => (open ? "-50px" : "0px")};
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.2s ease-in;
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+
+  @media (min-width: 710px) {
+    margin-top: ${({ open }) => (open ? "100px" : "-60px")};
+    border-radius: 3px;
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 0;
+    border: 1px white solid;
+    height: auto;
+
+    button {
+      padding: 20px;
+    }
+  }
+
+  a {
+    font-size: 2rem;
+    padding: 1.5rem 0;
+
+    text-decoration: none;
+    transition: height 0.3s linear;
+
+    div {
+      font-weight: bold;
     }
 
-    &:hover {
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+`;
+
+export const ButtonSideMenu = styled(FilterButton)`
+  border: none;
+  margin: 5px;
+  padding: 15px 5px;
+  background: initial;
+  display: block;
+
+  svg {
+    background: initial;
+  }
+
+  &:hover {
+    background: initial;
+    svg {
       background: initial;
-      svg {
-        background: initial;
-      }
     }
   }
 `;
