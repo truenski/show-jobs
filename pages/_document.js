@@ -3,17 +3,16 @@ import { ServerStyleSheet } from "styled-components";
 
 /*This document will inject server-side rendered styles to the head so it can render the page and its styles correctly. */
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
-
     try {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp:
-            (App: JSX.IntrinsicAttributes) =>
-            (props: JSX.IntrinsicAttributes) =>
-              sheet.collectStyles(<App {...props} />),
+            (App) =>
+              (props) =>
+                sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);

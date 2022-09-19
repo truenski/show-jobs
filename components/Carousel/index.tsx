@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
 import { Job } from "../../typings";
-import { Container, CarouselArea, Prev, Next, Up } from "./styled";
+import { Container, CarouselArea, Prev, Next } from "./styled";
 
 type Props = {
   children: any;

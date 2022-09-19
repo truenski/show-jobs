@@ -31,7 +31,7 @@ const Home = ({ data }: Props) => {
 };
 
 // SSR - Server Side Rendering
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: any) {
   const data = await Api.get("api/jobs").then(({ data }) => data);
   return {
     props: { data }, // will be passed to the page component as props

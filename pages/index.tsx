@@ -9,7 +9,7 @@ const Home = (props: Props) => {
 export default Home;
 
 /*Redirecting to required page /test/jobs */
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: any) {
   return {
     redirect: {
       destination: "/test/jobs",
