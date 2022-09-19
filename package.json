@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"next dev\" \"nodemon server.js\"",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently --kill-others-on-fail \"next start\" \"nodemon server.js\"",
     "lint": "next lint"
   },
   "dependencies": {
