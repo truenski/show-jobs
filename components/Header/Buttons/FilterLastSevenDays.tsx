@@ -1,8 +1,8 @@
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { ButtonSideMenu } from "./styled";
+import { ButtonSideMenu } from "../styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Job } from "../../typings";
+import { Job } from "../../../typings";
 
 type Props = {
   setJobs: React.Dispatch<React.SetStateAction<Job[]>>;

@@ -2,7 +2,7 @@ import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SetStateAction, useState } from "react";
 import styled from "styled-components";
-import { FilterButton } from "./styled";
+import { FilterButton } from "../styled";
 
 type Props = {
   setOpen: React.Dispatch<SetStateAction<boolean>>;

@@ -10,16 +10,18 @@ type Props = { data: Job[] };
 
 const Home = ({ data }: Props) => {
   const [jobs, setJobs] = useState<Job[]>([]);
+  const [initialJobs, setInitialJobs] = useState<Job[]>([]);
 
   useEffect(() => {
     setJobs(data);
+    setInitialJobs(data);
   }, []);
 
   return (
     <>
       <GlobalStyle />
       <Container>
-        <Header setJobs={setJobs} />
+        <Header setJobs={setJobs} initialJobs={initialJobs} />
         <Carousel jobs={jobs}>
           <JobList jobs={jobs} />
         </Carousel>

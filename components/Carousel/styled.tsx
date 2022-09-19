@@ -28,7 +28,7 @@ export const CarouselArea = styled.div<{ scrollY: number }>`
 `;
 export const Button = styled.button`
   height: 30px;
-  width: 90%;
+  width: 488px;
   border: solid 1px white;
   cursor: pointer;
 

@@ -1,8 +1,8 @@
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../Theme";
 import { StyledMenu } from "./styled";
-import FilterLastSevenDays from "./FilterLastSevenDays";
-import SortByCompanyName from "./SortByCompanyName";
+import FilterLastSevenDays from "./Buttons/FilterLastSevenDays";
+import SortByCompanyName from "./Buttons/SortByCompanyName";
 
 type Props = {
   open: boolean;

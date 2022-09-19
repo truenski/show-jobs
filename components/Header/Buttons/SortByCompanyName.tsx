@@ -1,8 +1,8 @@
 import { faArrowUpAZ } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Job } from "../../typings";
-import { ButtonSideMenu } from "./styled";
+import { Job } from "../../../typings";
+import { ButtonSideMenu } from "../styled";
 
 type Props = {
   setJobs: React.Dispatch<React.SetStateAction<Job[]>>;

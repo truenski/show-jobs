@@ -8,11 +8,20 @@ export const Container = styled.div`
   box-shadow: 1px 1px 10px 0px #ffffff36;
   z-index: 2;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
 
   button:last-child {
     margin-right: 15px;
   }
+
+  @media (max-width: 710px) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const ZippiaText = styled.img`
+  margin: 0 20px;
 `;
 
 export const FilterButton = styled.button`
@@ -57,7 +66,7 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   justify-content: center;
   align-items: center;
   text-align: left;
-  height: ${({ open }) => (open ? "100px" : "0px")};
+  height: ${({ open }) => (open ? "160px" : "0px")};
   margin-top: ${({ open }) => (open ? "100px" : "0px")};
   margin-bottom: ${({ open }) => (open ? "-50px" : "0px")};
   overflow: hidden;
@@ -68,7 +77,7 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   }
 
   @media (min-width: 710px) {
-    margin-top: ${({ open }) => (open ? "100px" : "-60px")};
+    margin-top: ${({ open }) => (open ? "100px" : "-120px")};
     border-radius: 3px;
     display: block;
     position: absolute;
