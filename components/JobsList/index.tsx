@@ -1,6 +1,5 @@
 import { faExternalLink, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios, { AxiosResponse } from "axios";
 
 import {
   CardContainer,
@@ -13,8 +12,6 @@ import {
   IconContainer,
 } from "./styled";
 import { Job } from "../../typings";
-import { useEffect, useState } from "react";
-import { Api } from "../../api/axios";
 
 type Props = { jobs: Job[] };
 

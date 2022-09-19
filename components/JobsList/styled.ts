@@ -89,6 +89,11 @@ export const RightSideContainer = styled.div`
   flex-direction: column;
   gap: 8px;
   white-space: break-spaces;
+
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 export const ShortDesc = styled.span`
