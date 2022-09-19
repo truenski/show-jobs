@@ -13,8 +13,8 @@ const Home = ({ data }: Props) => {
   const [initialJobs, setInitialJobs] = useState<Job[]>([]);
 
   useEffect(() => {
-    setJobs(data);
     setInitialJobs(data);
+    setJobs([...data]);
   }, []);
 
   return (

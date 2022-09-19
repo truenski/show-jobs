@@ -13,15 +13,10 @@ export const Container = styled.div`
   button:last-child {
     margin-right: 15px;
   }
-
-  @media (max-width: 710px) {
-    display: flex;
-    justify-content: center;
-  }
 `;
 
 export const ZippiaText = styled.img`
-  margin: 0 20px;
+  margin: 18px;
 `;
 
 export const FilterButton = styled.button`

@@ -18,7 +18,9 @@ const Header = ({ setJobs, initialJobs }: Props) => {
   return (
     <>
       <Container>
-        <ZippiaText src="https://static.zippia.com/ui-router/images/header/logo_white.svg" />
+        <a href="https://www.zippia.com" target="_blank" rel="noreferrer">
+          <ZippiaText src="https://static.zippia.com/ui-router/images/header/logo_white.svg" />
+        </a>
         <FilterListButton open={open} setOpen={setOpen} />
       </Container>
       <SideMenu open={open}>

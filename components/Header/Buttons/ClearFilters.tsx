@@ -12,7 +12,6 @@ const ClearFilters = ({ setJobs, initialJobs }: Props) => {
   const clearFilter = () => {
     setJobs([...initialJobs]);
   };
-
   return (
     <ButtonSideMenu onClick={clearFilter}>
       Clear Filters <FontAwesomeIcon icon={faRotate}></FontAwesomeIcon>

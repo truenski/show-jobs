@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
-const colors = ["red", "green", "blue", "purple", "brown", "orange"];
-const randomIndex = Math.floor(Math.random() * colors.length);
-
-export const JobIcon = styled.div`
-  background: ${colors[randomIndex]};
+export const JobIcon = styled.div<{ randomIndex: number; colors: string[] }>`
+  background: ${(props) => props.colors[props.randomIndex]};
   width: 50px;
   height: 50px;
   padding: 11px 17px;
@@ -15,10 +12,13 @@ export const JobIcon = styled.div`
   margin-bottom: 10px;
 `;
 
-export const CardContainer = styled.a`
+export const CardContainer = styled.a<{
+  randomIndex: number;
+  colors: string[];
+}>`
   text-decoration: none;
   color: black;
-  border-left: 4px ${colors[randomIndex]} solid;
+  border-left: 4px ${(props) => props.colors[props.randomIndex]} solid;
   display: flex;
   gap: 20px;
   margin: 20px;
