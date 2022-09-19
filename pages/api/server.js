@@ -67,4 +67,6 @@ app.get("/api/jobs", (req, res) => {
     });
 });
 
+module.exports = app;
+
 app.listen(port, () => console.log(`Listening on port ${port}`));

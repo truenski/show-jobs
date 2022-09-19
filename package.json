@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail \"next dev\" \"nodemon server.js\"",
+    "dev": "concurrently --kill-others-on-fail \"next dev\" \"cd ./pages/api && nodemon server.js\"",
     "build": "next build",
-    "start": "concurrently --kill-others-on-fail \"next start\" \"nodemon server.js\"",
+    "start": "concurrently --kill-others-on-fail \"next start\" \"cd ./pages/api && nodemon server.js\"",
     "lint": "next lint"
   },
   "dependencies": {
