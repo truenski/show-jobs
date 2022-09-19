@@ -11,13 +11,8 @@ type Props = { data: Job[] };
 const Home = ({ data }: Props) => {
   const [jobs, setJobs] = useState<Job[]>([]);
 
-  //   const getJobs = () => {
-  //     Api.get("api/jobs").then(({ data }) => setJobs(data));
-  //   };
-
   useEffect(() => {
     setJobs(data);
-    // getJobs();
   }, []);
 
   return (

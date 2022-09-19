@@ -38,7 +38,7 @@ const Carousel = ({ children, jobs }: Props) => {
       /*Jobs card height may vary because of the responsivity, so as i don't have a fixed value for the cards, 
       i'll deal with the final scroll in the carousel adding a space equivalent to a card, so it will prevent not displaying the last card 
     */
-      y = window.innerHeight * 0.83 - listH;
+      y = window.innerHeight * 0.83 - listH - 50;
       setDisablePrev(true);
     }
 
